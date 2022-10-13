@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판 글쓰기</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include("common/header.ejs");%>
+    <div id="container">
+      <div class="title"><h2>문의하기</h2></div>
+      <div class="context">
+        <p>
+          지엔테크 제품에 대한 <span>궁금한 사항이나 관련 자료</span>가
+          필요하신분들은 문의 글을 남겨주세요.
+        </p>
+        <p>담당자 확인 후 전화나 메일로 답변을 드리겠습니다.</p>
+      </div>
+
+      <div class="brd_form">
+        <form id="myform" action="/add" method="post">
+          <div>
+            <label for="title">제목</label>
+            <input type="text" name="title" />
+          </div>
+
+          <div>
+            <label for="author">작성자</label>
+            <input type="text" name="author" />
+          </div>
+          <div>
+            <label for="context">문의사항</label>
+            <textarea name="context" rows="15"></textarea>
+          </div>
+          <div class="buttons">
+            <button class="submit" type="submit">게시글 작성</button>
+            <a href="/list" class="back">취소</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <%- include("common/footer.ejs");%>
+    <script>
+      const backBtn = document.querySelector(".back"); //삭제역할 a태그
+      backBtn.addEventListener("click", function (event) {
+        // 확인/취소 고를수있는 경고창 꺼내기
+        let test = window.confirm("목록페이지로 돌아가시겠습니까?");
+        // confirm() 함수에서 확인을 누르면 true값 취소를 누르면 false값
+        if (test === false) {
+          //취소를 누르면
+          event.preventDefault(); //페이지이동 금지
+        }
+        //del 버튼을 누르면 컨펌창이 열리고 확인을 누르면 그때 a태그의 href 주소로 이동
+      });
+    </script>
+  </body>
+</html>

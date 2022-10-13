@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글 상세페이지</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      .views {
+        margin-top: 20px;
+      }
+      .date {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("common/header.ejs");%>
+    <div id="container">
+      <div class="title"><h2>기업소식</h2></div>
+      <div class="brd_detail">
+        <!-- <div><%- data.brdid %></div> -->
+        <div><%- data.brdtitle %></div>
+        <div><%- data.brdcontext %></div>
+        <!-- <div><%- data.brdauthor %></div> -->
+        <div class="date"><%- data.brddate %></div>
+        <div class="views">조회수: <%- data.brdviews %></div>
+      </div>
+      <div class="buttons">
+        <a class="modify" href="/uptview/<%- data.brdid %>">수정</a>
+        <a class="delete" id="del" href="/delete/<%- data.brdid %>">삭제</a>
+        <!--/delete/게시글번호-->
+        <a class="back" href="/list">목록</a>
+      </div>
+    </div>
+    <%- include("common/footer.ejs");%>
+    <script>
+      const delBtn = document.querySelector("#del"); //삭제역할 a태그
+      delBtn.addEventListener("click", function (event) {
+        // 확인/취소 고를수있는 경고창 꺼내기
+        let test = window.confirm("게시글을 정말 삭제하시겠습니까?");
+        // confirm() 함수에서 확인을 누르면 true값 취소를 누르면 false값
+        if (test === false) {
+          //취소를 누르면
+          event.preventDefault(); //페이지이동 금지
+        }
+        //del 버튼을 누르면 컨펌창이 열리고 확인을 누르면 그때 a태그의 href 주소로 이동
+      });
+    </script>
+  </body>
+</html>

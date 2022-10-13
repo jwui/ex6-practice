@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글 수정화면페이지</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include("common/header.ejs");%>
+    <div id="containerUpt">
+      <div class="title"><h2>기업소식</h2></div>
+      <div class="brd_upt">
+        <form action="/update" method="post">
+          <input type="hidden" name="id" value="<%- data.brdid %>" />
+          <input
+            class="title"
+            type="text"
+            name="title"
+            value="<%- data.brdtitle %>"
+          />
+          <textarea class="context" name="context">
+<%- data.brdcontext %></textarea
+          >
+          <!-- <input type="text" name="author" value="<%- data.brdauthor %>" /> -->
+          <div class="buttons">
+            <button class="modify" type="submit">게시글 수정</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <%- include("common/footer.ejs");%>
+  </body>
+</html>

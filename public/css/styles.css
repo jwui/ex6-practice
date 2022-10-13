@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+video {
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+select,
+textarea {
+  outline: 0;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body {
+  line-height: 1;
+}
+
+.clear_fix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#header {
+  width: 100%;
+  display: block;
+}
+#header .center {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#header .center .logo {
+  display: flex;
+}
+#header .center .logo img {
+  width: 80px;
+}
+#header .center .gnb ul {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 80px;
+}
+#header .center .gnb ul li {
+  display: flex;
+}
+#header .center .gnb ul li a {
+  color: #000;
+}
+#header .bg {
+  position: relative;
+}
+#header .bg img {
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  width: 100%;
+  height: 220px;
+}
+#header .bg .context {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#header .bg .context h2 {
+  margin-bottom: 20px;
+}
+
+#container .title {
+  margin-top: 140px;
+  margin-bottom: 80px;
+  text-align: center;
+  position: relative;
+}
+#container .context {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f4f4f4;
+  line-height: 1.5;
+  padding: 24px 0;
+}
+#container .context span {
+  color: #304190;
+  font-weight: bold;
+}
+#container .total {
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#container .brd_table {
+  border-top: solid 1px #000;
+  margin: 0 auto;
+  width: 1200px;
+}
+#container .brd_table a {
+  color: #000;
+}
+#container .brd_table .line {
+  padding-left: 50px;
+  display: flex;
+  border-top: 1px solid #000;
+  line-height: 50px;
+  text-align: left;
+  flex-basis: auto;
+}
+#container .brd_table .line:last-of-type {
+  border-bottom: 1px solid #000;
+}
+#container .brd_table .line > div:first-child {
+  width: 300px;
+}
+#container .brd_table .line > div:nth-child(2) {
+  width: 600px;
+}
+
+#footer-top {
+  background-color: #f4f4f4;
+  margin-top: 200px;
+}
+#footer-top .center {
+  width: 1200px;
+  line-height: 50px;
+  margin: 0 auto;
+}
+#footer-top .center .botnav ul {
+  display: flex;
+}
+#footer-top .center .botnav ul li:last-child a::after {
+  opacity: 0;
+}
+#footer-top .center .botnav ul li a {
+  color: black;
+}
+#footer-top .center .botnav ul li a::after {
+  display: inline;
+  content: "|";
+  margin: 0 20px;
+  position: relative;
+  top: -1px;
+}
+
+.copyright {
+  width: 100%;
+}
+.copyright .center {
+  width: 1200px;
+  line-height: 50px;
+  margin: 0 auto;
+  height: 110px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.copyright .center img {
+  height: 80px;
+  margin-right: 80px;
+}
+.copyright .center > div {
+  line-height: 40px;
+}
+.copyright .center > div span {
+  color: #304190;
+  font-weight: bold;
+}
+
+.brd_form form {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.brd_form form > div {
+  display: flex;
+  border-bottom: 1px solid gray;
+  border-collapse: collapse;
+}
+.brd_form form > div:first-of-type {
+  border-top: 1px solid gray;
+}
+.brd_form form label {
+  width: 220px;
+  background-color: #f4f4f4;
+  text-align: center;
+  line-height: 50px;
+}
+.brd_form form input {
+  margin-left: 20px;
+  display: block;
+  margin: 5px 20px;
+  width: 170px;
+  line-height: 40px;
+  text-indent: 20px;
+}
+.brd_form form textarea {
+  margin-left: 20px;
+  display: block;
+  width: 860px;
+  margin: 5px 20px;
+  padding: 20px;
+}
+.brd_form form .submit {
+  margin: 40px 0;
+  border: none;
+  line-height: 10px;
+  padding: 20px;
+  color: white;
+  background-color: #304190;
+  font-size: 14px;
+}
+.brd_form form .back {
+  margin: 40px 0;
+  font-size: 14px;
+  border: none;
+  line-height: 10px;
+  padding: 16px 20px;
+  color: white;
+  background-color: gray;
+  position: relative;
+  top: 1px;
+}
+.brd_form form .buttons {
+  justify-content: right;
+  border-bottom: none;
+}
+.brd_form form .buttons button {
+  margin-right: 20px;
+}
+
+#container .brd_detail {
+  width: 1200px;
+  margin: 0 auto;
+}
+#container .brd_detail > div:first-of-type {
+  line-height: 50px;
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+}
+#container .brd_detail > div:nth-of-type(2) {
+  padding-top: 40px;
+  padding-bottom: 200px;
+  border-bottom: 1px solid #000;
+}
+#container .buttons {
+  justify-content: right;
+  display: flex;
+  width: 1200px;
+  margin: 40px auto;
+}
+#container .buttons a {
+  color: #000;
+}
+#container .buttons .modify {
+  margin: 40px 0;
+  margin-right: 20px;
+  border: none;
+  line-height: 10px;
+  padding: 20px;
+  color: white;
+  background-color: #304190;
+  font-size: 14px;
+}
+#container .buttons .delete {
+  margin: 40px 0;
+  margin-right: 20px;
+  border: none;
+  line-height: 10px;
+  padding: 20px;
+  color: white;
+  background-color: #304190;
+  font-size: 14px;
+}
+#container .buttons .back {
+  margin: 40px 0;
+  border: none;
+  line-height: 10px;
+  padding: 20px;
+  color: white;
+  background-color: #304190;
+  font-size: 14px;
+}
+
+#containerUpt .title {
+  text-align: center;
+  margin-top: 140px;
+  margin-bottom: 80px;
+}
+#containerUpt .brd_upt {
+  width: 1200px;
+  margin: 0 auto;
+}
+#containerUpt .brd_upt form .title {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  line-height: 50px;
+  border: none;
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+  font-size: 16px;
+  text-align: left;
+}
+#containerUpt .brd_upt form .context {
+  font-family: "Arial";
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #000;
+  padding-top: 40px;
+  padding-bottom: 200px;
+  width: 1200px;
+  font-size: 16px;
+  text-indent: 0px;
+}
+#containerUpt .brd_upt form .buttons {
+  justify-content: right;
+  display: flex;
+  width: 1200px;
+  margin: 40px auto;
+}
+#containerUpt .brd_upt form .buttons a {
+  color: #000;
+}
+#containerUpt .brd_upt form .buttons .modify {
+  margin: 40px 0;
+  border: none;
+  line-height: 10px;
+  padding: 20px;
+  color: white;
+  background-color: #304190;
+  font-size: 14px;
+}
+#containerUpt buttons {
+  justify-content: right;
+  display: flex;
+  width: 1200px;
+  margin: 40px auto;
+}
+#containerUpt buttons a {
+  color: #000;
+}
+#containerUpt buttons .modify {
+  margin: 40px 0;
+  border: none;
+  line-height: 10px;
+  padding: 20px;
+  color: white;
+  background-color: #304190;
+  font-size: 14px;
+}

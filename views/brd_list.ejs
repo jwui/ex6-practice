@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글 목록페이지</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .write {
+        width: 1200px;
+        margin: 40px auto;
+      }
+      .write a {
+        margin: 40px 0;
+        line-height: 10px;
+        padding: 20px;
+        background-color: gray;
+        float: right;
+        color: #fff;
+      }
+      #container .brd_table a {
+        color: black;
+      }
+      .search-box {
+        width: 1200px;
+        margin: 0 auto;
+        height: 30px;
+      }
+      .search-box form {
+        float: right;
+      }
+      .search-box form input {
+        line-height: 40px;
+        text-indent: 10px;
+      }
+      form button {
+        font-size: 34px;
+        position: relative;
+        top: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("common/header.ejs");%>
+    <div id="container">
+      <div class="title"><h2>기업소식</h2></div>
+      <div class="search-box">
+        <form action="." method="post">
+          <input
+            class="search-txt"
+            type="text"
+            placeholder="검색어를 입력해 주세요"
+          />
+          <button class="search-btn" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="total">Total: <%- data.length %>개</div>
+      <div class="brd_table">
+        <div class="line">
+          <div>번호</div>
+          <div>제목</div>
+          <div>작성자</div>
+        </div>
+        <% for(let i=0; i < data.length; i++){ %>
+        <div class="line">
+          <div><%- data[i].brdid %></div>
+          <div>
+            <a href="/detail/<%- data[i].brdid %>"><%- data[i].brdtitle %></a>
+          </div>
+          <div><%- data[i].brdauthor %></div>
+        </div>
+        <% } %>
+      </div>
+      <div class="write"><a href="/insert">글쓰기</a></div>
+    </div>
+    <%- include("common/footer.ejs");%>
+  </body>
+</html>
